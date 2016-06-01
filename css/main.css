@@ -1,0 +1,40 @@
+html, body, h1, h2, h3, p, ol, ul, li, a, input {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    background: #ffe1ad;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+
+p {
+    font-style: italic;
+}
+
+.title p {
+    font-style: normal;
+}
+
+span {
+    font-style: normal;
+    font-weight: bold;
+}
+
+main {
+    background: #fbfbfb;
+    width: 1200px;
+    margin: 0 auto 60px auto;
+}
