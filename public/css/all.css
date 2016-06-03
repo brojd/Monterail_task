@@ -201,7 +201,7 @@ article .title p strong {
     background: #2d2c2e;
 }
 
-.statistics {
+.question .statistics {
     float: right;
     position: relative;
     bottom: 173px;
@@ -210,7 +210,7 @@ article .title p strong {
     font-style: italic;
 }
 
-.statistics span {
+.question .statistics span {
     font-style: normal;
     margin-right: 10px;
     font-weight: bold;

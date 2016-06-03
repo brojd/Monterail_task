@@ -33,7 +33,7 @@ span {
     font-weight: bold;
 }
 
-main {
+body > main {
     background: #fbfbfb;
     width: 1200px;
     margin: 0 auto 60px auto;

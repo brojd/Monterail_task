@@ -1,0 +1,319 @@
+/* INITIAL SETTINGS */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal_content {
+    background-color: #fefefe;
+    margin: 22px auto 95px auto;
+    border: 1px solid #888;
+    width: 850px;
+    height: 1020px;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal_content .close_modal {
+    color: #aaa;
+    position: absolute;
+    right: 19px;
+    top: 19px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.modal_content .close_modal:hover, .modal_content .close_modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* HEADER */
+
+.modal_content header {
+    height: 150px;
+    width: 604px;
+    margin: 0 auto;
+    padding: 50px 0 30px 0;
+    border-bottom: 1px solid #a7a9ac;
+}
+
+.modal_content header > img {
+    display: block;
+    margin: 0 auto 16px auto;
+}
+
+.modal_content header p {
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+}
+
+.modal_content header p strong {
+    font-size: 18px;
+    color: #0266b3;
+    font-style: normal;
+}
+
+.modal_content header ul {
+    width: 604px;
+    margin: 0 auto;
+}
+
+.modal_content header .info li {
+    display: inline;
+    font-size: 13px;
+    color: #7d8fa0;
+    margin: 0 55px 0 0;
+}
+
+.modal_content header .info li > span {
+    color: #000000;
+}
+
+.modal_content header .info li > img {
+    position: relative;
+    top: 13px;
+}
+
+
+/* MAIN */
+
+
+.modal_content main {
+    margin: 25px auto 0 auto;
+    display: block;
+    width: 604px;
+    text-align: center;
+    position: relative;
+}
+
+.modal_content main h1 {
+    font-size: 30px;
+    font-style: italic;
+}
+
+.modal_content main .back_button {
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+
+.modal_content main .next_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal_content main > p {
+    font-size: 13px;
+    color: #7d8fa0;
+    font-style: normal;
+    margin: 37px auto 0 auto;
+}
+
+/* squares */
+
+.modal_content main .squares {
+    margin: 0 0 58px 0;
+}
+
+.modal_content main .squares li {
+    display: inline-block;
+    width: 94px;
+    height: 94px;
+    background: #e5f5fd;
+    margin: 45px 16px 0 0;
+}
+
+.modal_content main .squares li p {
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.modal_content main .squares li span {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.modal_content .squares #peers {
+    transform: rotate(45deg);
+}
+
+.modal_content .squares #peers p, .modal_content .squares #peers span {
+    transform: rotate(-45deg);
+    position: absolute;
+    display: block;
+}
+
+.modal_content .squares #peers p {
+    top: 30px;
+    left: 28px;
+}
+
+.modal_content .squares #peers span {
+    bottom: 18px;
+    left: 50px;
+}
+
+.modal_content .squares #discussions {
+    transform: rotate(-10deg);
+}
+
+.modal_content .squares #discussions p, .modal_content .squares #discussions span {
+    transform: rotate(10deg);
+    position: absolute;
+    display: block;
+}
+
+.modal_content .squares #discussions p {
+    top: 25px;
+    left: 37px;
+}
+
+.modal_content .squares #discussions span {
+    bottom: 13px;
+    left: 16px;
+}
+
+.modal_content .squares #findings {
+    transform: rotate(55deg);
+}
+
+.modal_content .squares #findings p, .modal_content .squares #findings span {
+    transform: rotate(-55deg);
+    position: absolute;
+    display: block;
+}
+
+.modal_content .squares #findings p {
+    top: 32px;
+    left: 29px;
+}
+
+.modal_content .squares #findings span {
+    bottom: 23px;
+    left: 51px;
+}
+
+.modal_content .squares #questions {
+    transform: rotate(10deg);
+}
+
+.modal_content .squares #questions p, .modal_content .squares #questions span {
+    transform: rotate(-10deg);
+    position: absolute;
+    display: block;
+}
+
+.modal_content .squares #questions p {
+    top: 28px;
+    left: 33px;
+}
+
+.modal_content .squares #questions span {
+    bottom: 13px;
+    left: 29px;
+}
+
+/* join_users */
+
+.modal_content .join_users {
+    width: 300px;
+    margin: 0 auto 45px auto;
+    height: 160px;
+}
+
+.modal_content .join_users li {
+    display: inline-block;
+    float: left;
+}
+
+.modal_content .join_users li img {
+    background: url(../images/img_back.png);
+    padding: 20px;
+    margin: 20px 12px 8px 0;
+}
+
+.modal_content .join_users li:last-child img {
+    margin-right: 0;
+}
+
+.modal_content .join_users li p {
+    font-size: 16px;
+    color: #0266b3;
+    font-style: normal;
+    width: 92px;
+    height: 54px;
+}
+
+/* hot discussion */
+
+.modal_content .hot_discussion {
+    height: 160px;
+    background: url(../images/hot_disc_back.png) repeat-x;
+    position: relative;
+    left: -123px;
+    overflow: visible;
+    width: 850px;
+    margin: 55px 0 25px 0;
+}
+
+.modal_content .hot_discussion img {
+    margin: 0 auto;
+    position: relative;
+    top: -25px;
+}
+
+.modal_content .hot_discussion p {
+    font-size: 11px;
+    color: #7d8fa0;
+    font-style: normal;
+    margin: -18px auto;
+}
+
+.modal_content .hot_discussion span {
+    font-size: 15px;
+    color: #0266b3;
+}
+
+.modal_content .hot_discussion h3 {
+    margin: 23px auto 0 auto;
+    font-size: 18px;
+    font-style: italic;
+    color: #0266b3;
+}
+
+.modal_content .hot_discussion .statistics {
+    margin: 30px auto 0 auto;
+}
+
+.modal_content .hot_discussion .statistics li {
+    display: inline;
+    font-style: italic;
+    font-size: 14px;
+    margin-right: 30px;
+}
+
+.modal_content .hot_discussion .statistics li:last-child {
+    margin-right: 0;
+}
+
+.modal_content .hot_discussion .statistics li span {
+    color: #000000;
+    font-style: normal;
+    font-size: 16px;
+}
