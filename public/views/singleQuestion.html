@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/single.css">
         <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/single.css">
+        <link rel="stylesheet" href="../css/singleMediaQueries.css">
         <link rel="stylesheet" href="../css/profileModal.css">
     </head>
     <body>
@@ -18,22 +19,23 @@
         </header>
         <main>
             <section class="question">
-                <img class="owner_pic open_modal" src="../images/eva.png">
-                <div class="title">
-                    <p><strong class="open_modal">Eva</strong> IS ASKING:</p>
-                    <h2>Will insuline make my patient gain weight?</h2>
-                </div>
-                <a href="#"><strong>unfollow</strong></a>
-                <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum semper aliquam.
-                    Aliquam a aliquet arcu. Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
-                    Donec non ex non massa rutrum vulputate sed id libero. Integer commodo commodo purus euismod ornare.
-                    Mauris a mi fringilla, suscipit arcu vestibulum, porttitor dolor.
-                </p>
-                <div class="votes">
-                    <p><span>19</span> upvotes</p>
-                    <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                    <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                <div class="comment_wrapper">
+                    <img class="owner_pic open_modal" src="../images/eva.png">
+                    <div class="title">
+                        <p><strong class="open_modal">Eva</strong> IS ASKING:</p>
+                        <h2>Will insuline make my patient gain weight?</h2>
+                    </div>
+                    <a href="#"><strong>unfollow</strong></a>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum semper aliquam.
+                        Aliquam a aliquet arcu. Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
+                        Donec non ex non massa rutrum vulputate sed id libero.
+                    </p>
+                    <div class="votes">
+                        <p><span>19</span> upvotes</p>
+                        <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
+                        <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                    </div>
                 </div>
                 <button>GIVE new answer</button>
             </section>
@@ -41,57 +43,62 @@
                 <p class="answers_header"><span>2</span> peers already answered Eva</p>
                 <article class="answer">
                     <img class="owner_pic open_modal" src="../images/patricia.png">
-                    <div class="title">
-                        <p>
-                            <strong class="open_modal">Patricia</strong> COMMENTED IT<span class="comment_dot"></span>
-                            <span class="comment_date">yesterday</span>
+                    <div class="comment_wrapper">
+                        <div class="title">
+                            <p>
+                                <strong class="open_modal">Patricia</strong> COMMENTED IT<span class="comment_dot"></span>
+                                <span class="comment_date">yesterday</span>
+                            </p>
+                        </div>
+                        <p class="description">
+                            Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
                         </p>
-                    </div>
-                    <p class="description">
-                        Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
-                        Donec non ex non massa rutrum vulputate sed id libero.
-                    </p>
-                    <div class="votes">
-                        <p><span>8</span> upvotes</p>
-                        <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                        <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                        <div class="votes">
+                            <p><span>8</span> upvotes</p>
+                            <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
+                            <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                        </div>
                     </div>
                 </article>
                 <article class="continued_answer">
-                    <img class="owner_pic open_modal" src="../images/david.png">
-                    <div class="title">
-                        <p>
-                            <strong class="open_modal">David</strong> COMMENTED IT<span class="comment_dot"></span>
-                            <span class="comment_date">yesterday</span>
+                    <div class="comment_wrapper">
+                        <img class="owner_pic open_modal" src="../images/david.png">
+                        <div class="title">
+                            <p>
+                                <strong class="open_modal">David</strong> COMMENTED IT<span class="comment_dot"></span>
+                                <span class="comment_date">yesterday</span>
+                            </p>
+                        </div>
+                        <p class="description">
+                            Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
+                            Donec non ex non massa rutrum vulputate sed id libero.
                         </p>
-                    </div>
-                    <p class="description">
-                        Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
-                        Donec non ex non massa rutrum vulputate sed id libero.
-                    </p>
-                    <div class="votes">
-                        <p><span>2</span> upvotes</p>
-                        <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                        <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                        <div class="votes">
+                            <p><span>2</span> upvotes</p>
+                            <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
+                            <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                        </div>
                     </div>
                     <button>CONTINUE discussion</button>
                 </article>
                 <article class="answer uncommented">
-                    <img class="owner_pic open_modal" src="../images/joseph.png">
-                    <div class="title">
-                        <p>
-                            <strong class="open_modal">Joseph</strong> COMMENTED IT<span class="comment_dot"></span>
-                            <span class="comment_date">two days</span>
+                    <div class="comment_wrapper">
+                        <img class="owner_pic open_modal" src="../images/joseph.png">
+                        <div class="title">
+                            <p>
+                                <strong class="open_modal">Joseph</strong> COMMENTED IT<span class="comment_dot"></span>
+                                <span class="comment_date">two days</span>
+                            </p>
+                        </div>
+                        <p class="description">
+                            Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
+                            Donec non ex non massa rutrum vulputate sed id libero.
                         </p>
-                    </div>
-                    <p class="description">
-                        Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
-                        Donec non ex non massa rutrum vulputate sed id libero.
-                    </p>
-                    <div class="votes">
-                        <p><span>3</span> downvotes</p>
-                        <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                        <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                        <div class="votes">
+                            <p><span>3</span> downvotes</p>
+                            <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
+                            <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                        </div>
                     </div>
                     <button>COMMENT</button>
                 </article>

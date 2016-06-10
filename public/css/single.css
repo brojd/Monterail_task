@@ -57,15 +57,6 @@ section {
     margin: 0 auto;
 }
 
-/* main question */
-
-.question {
-    position: relative;
-    height: 247px;
-    background: url(../images/single_question_back.png);
-    box-shadow: 3px -1px 3px #e9e9e9;
-}
-
 .owner_pic {
     position: absolute;
     top: 20px;
@@ -73,12 +64,11 @@ section {
 }
 
 .title {
-    margin: 0 0 0 112px;
-    height: 50px;
-    width: 505px;
+    margin: 18px 0 14px 20px;
+    height: 20px;
     line-height: 24px;
-    position: relative;
     top: 20px;
+    display: block;
 }
 
 .title p {
@@ -96,17 +86,9 @@ section {
     color: #0266b3;
 }
 
-.question a strong {
-    float: right;
-    position: relative;
-    bottom: 10px;
-    right: 69px;
-}
-
 .description {
     width: 472px;
-    height: 100px;
-    margin: 65px 0 0 110px;
+    margin: 0 0 0 20px;
     font-style: normal;
     font-size: 14px;
 }
@@ -117,10 +99,8 @@ section {
     height: 38px;
     line-height: 38px;
     position: relative;
-    bottom: 110px;
     right: 52px;
 }
-
 .votes span {
     margin-right: 5px;
 }
@@ -142,14 +122,49 @@ section {
     bottom: 0;
 }
 
-.question button, .answer button {
+.question button, .answer button, .continued_answer button {
     background: #ffffff;
     width: 180px;
     height: 30px;
     border: 1px solid #e5e5e5;
     font-weight: 500;
     font-size: 15px;
-    margin: 15px 0 0 310px;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -14px;
+}
+
+/* main question */
+
+.question {
+    position: relative;
+    height: 247px;
+    background: url(../images/single_question_back.png);
+    box-shadow: 3px -1px 3px #e9e9e9;
+}
+
+.question .comment_wrapper {
+    width: 708px;
+    float: right;
+    height: 100px;
+}
+
+.question a strong {
+    float: right;
+    position: relative;
+    bottom: 10px;
+    right: 69px;
+}
+
+.question .description {
+    margin-top: 80px;
+}
+
+.question .votes {
+    bottom: 60px;
 }
 
 /* answers */
@@ -192,29 +207,44 @@ section {
     margin: 0 9px;
 }
 
-.answer .description, .continued_answer .description {
-    margin-top: 10px;
-    height: auto;
+.answer .description {
+    margin-top: 16px;
 }
 
 .answer .owner_pic, .continued_answer .owner_pic {
-    border-right: 1px solid #e8e8e8;
     padding: 18px 20px 30px 20px;
     top: 0;
     left: 0;
 }
 
-.continued_answer .owner_pic {
-    padding: 18px 20px 70px 20px;
+.answer .comment_wrapper {
+    width: 707px;
+    float: right;
+    height: 100px;
+    border-left: 1px solid #e8e8e8;
+}
+
+.continued_answer .comment_wrapper {
+    width: 615px;
+    float: right;
+    height: 140px;
+    border-left: 1px solid #e8e8e8;
+}
+
+.answer.uncommented .comment_wrapper {
+    width: 708px;
+    float: right;
+    height: 123px;
+    border-left: 1px solid #e8e8e8;
 }
 
 .answer .votes, .continued_answer .votes {
-    bottom: 60px;
+    bottom: 43px;
 }
 
 .continued_answer {
     position: relative;
-    width: 708px;
+    width: 707px;
     margin: 0 0 35px 93px;
     background: #ffffff;
     height: 140px;
@@ -222,18 +252,12 @@ section {
     box-shadow: 3px 0px 3px #e9e9e9;
 }
 
-.continued_answer .description {
-    width: 380px;
+.continued_answer button {
+    left: -95px;
 }
 
-.continued_answer button {
-    background: #ffffff;
-    width: 180px;
-    height: 30px;
-    border: 1px solid #e5e5e5;
-    font-weight: 500;
-    font-size: 15px;
-    margin: 33px 0 0 220px;
+.continued_answer .description {
+    width: 380px;
 }
 
 .answer.uncommented {
@@ -244,5 +268,3 @@ section {
 .answer.uncommented .owner_pic {
     padding-bottom: 52px;
 }
-
-
