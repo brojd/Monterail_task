@@ -118,7 +118,7 @@ article ul li img {
 }
 
 article.question {
-    background: url(../images/article_back.png);
+    background: url(../images/article_back.png) no-repeat;
     height: 320px;
 }
 
