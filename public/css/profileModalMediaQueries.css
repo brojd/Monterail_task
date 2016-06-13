@@ -1,0 +1,139 @@
+@media screen and (max-width: 888px) {
+  
+  .modal, .modal_content  {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+}
+
+
+@media screen and (max-width: 643px) {
+  
+  .modal_content {
+    height: 1006px;
+  }
+  
+  .modal_content header {
+    height: 231px;
+    width: 100%;
+    padding: 22px 0 22px 0;
+  }
+  
+  .modal_content header .info {
+    width: 250px;
+    margin: 0 auto;
+  }
+  
+  .modal_content header .info li {
+    display: block;
+    margin: 20px 0 0 0;
+    text-align: center;
+  }
+  
+  .modal_content header .info li > * {
+    display: block;
+  }
+  
+  .modal_content header .activity_level {
+    position: relative;
+    top: -10px;
+  }
+  
+  .modal_content header > img {
+    margin-bottom: 8px;
+    width: 52px;
+    height: auto;
+  }
+  
+  .modal_content header p strong {
+    font-size: 14px;
+  }
+  
+  .modal_content main {
+    width: 100%;
+  }
+  
+  .modal_content main .back_button {
+    left: 10px;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .modal_content main .next_button {
+    right: 10px;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+  }
+  
+  .modal_content main .squares {
+    margin-top: 25px;
+  }
+  
+  .modal_content main .squares li {
+    margin-top: 0;
+    opacity: 0.8;
+  }
+  
+  .modal_content main > p {
+    margin: 16px auto 10px auto;
+  }
+  
+  .modal_content .hot_discussion {
+    height: 192px;
+    background: url(../images/hot_disc_back2.png) repeat-x;
+    width: 132.19284603421462%; /* 850 / 643 */
+    left: -16%;
+  }
+  
+  .modal_content main h1 {
+    font-size: 24px;
+}
+  
+}
+
+
+@media screen and (max-width: 490px) {
+  
+  .modal_content {
+    height: 1160px;
+  }
+  
+  .modal_content .hot_discussion .statistics {
+    width: 280px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+  }
+  
+  .modal_content .hot_discussion .statistics li {
+    display: inline-block;
+    text-align: left;
+    margin-right: 6.1224489795918366%; /* 30 / 490 */
+    margin-top: 5px;
+  }
+  
+  .modal_content .hot_discussion .statistics li:last-child {
+    margin-right: 25%;
+  }
+  
+  .modal_content .hot_discussion h3 {
+    width: 75%;
+  }
+  
+  .modal_content .join_users {
+    width: 240px;
+  }
+  
+  .modal_content .join_users li img {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 0;
+  }
+  
+  .modal_content .join_users li p {
+    width: 80px;
+  }
+  
+}

@@ -71,6 +71,10 @@
     margin: 0 auto;
 }
 
+.modal_content header ul .activity_level {
+    display: inline;
+}
+
 .modal_content header .info li {
     display: inline;
     font-size: 13px;
@@ -82,7 +86,7 @@
     color: #000000;
 }
 
-.modal_content header .info li > img {
+.modal_content header .info li img {
     position: relative;
     top: 13px;
 }
