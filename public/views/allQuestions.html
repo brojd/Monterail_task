@@ -22,65 +22,37 @@
         </div>
     </div>
 </header>
-<main ng-controller="ProfileModalCtrl">
-    <article class="question">
-        <img class="owner_pic open_modal" src="../images/eva.png">
+<main ng-controller="ProfileModalCtrl as modal">
+    {{modal.test}}
+    <article class="question" ng-repeat="question in questions.questions">
+        <img class="owner_pic open_modal" src="{{questions.getCurrentUser(question.owner_id).img_path}}">
         <div class="title">
-            <p><strong class="open_modal">Eva</strong> IS ASKING:</p>
-            <a href="#/question/1"><h2>Will insuline make my patient gain weight?</h2></a>
+            <p><strong class="open_modal">{{questions.getCurrentUser(question.owner_id).name}}</strong> IS ASKING:</p>
+            <a href="#/question/1"><h2>{{question.title}}</h2></a>
         </div>
         <ul class="respondents">
-            <li class="more"><p>3</p><p>more activities</p><div class="dot"></div></li>
-            <li class="commented"><img class="resp_pic open_modal" src="../images/waweru.png"><div class="dot"></div></li>
-            <li class="commented"><img class="resp_pic open_modal" src="../images/patricia.png"><div class="dot"></div></li>
-            <li class="commented"><img class="resp_pic open_modal" src="../images/david.png"><div class="dot"></div></li>
-            <li class="answered"><img class="resp_pic open_modal" src="../images/joseph.png"><div class="dot black_dot"></div></li>
+            <li class="more" ng-show="question.displayMore=='true'">
+                <p>{{questions.countMoreActivities(question)}}</p>
+                <p>more activities</p><div class="dot"></div>
+            </li>
+            <span ng-repeat="comment in questions.comments | filter:{question_id:question.id} | limitTo:3">
+                <li class="commented">
+                    <img class="resp_pic open_modal" src="{{questions.getCurrentUser(comment.owner_id).img_path}}">
+                    <div class="dot"></div>
+                </li>
+            </span>
+            <li class="answered">
+                <img class="resp_pic open_modal" src="../images/joseph.png">
+                <div class="dot black_dot"></div>
+            </li>
         </ul>
         <div class="statistics">
-            <p><span>1</span>related discussion</p>
-            <p><span>6</span>peers involved</p>
-            <p><span>3</span>conversations</p>
+            <p><span>{{question.related_discussions}}</span>related discussion</p>
+            <p><span>{{question.peers_involved}}</span>peers involved</p>
+            <p><span>{{question.conversations}}</span>conversations</p>
         </div>
     </article>
-    <article class="question">
-        <img class="owner_pic open_modal" src="../images/andrew.png">
-        <div class="title">
-            <p><strong class="open_modal">Andrew</strong> IS ASKING:</p>
-            <a href="singleQuestion.html"><h2>Vegan diet in diabetes treatment?</h2></a>
-        </div>
-        <ul class="respondents">
-            <li class="more"><p>6</p><p>more activities</p><div class="dot"></div></li>
-            <li class="commented"><img class="resp_pic open_modal" src="../images/david.png"><p></p><div class="dot"></div></li>
-            <li class="commented"><img class="resp_pic open_modal" src="../images/joseph.png"><p></p><div class="dot"></div></li>
-            <li class="commented"><img class="resp_pic open_modal" src="../images/halima.png"><p></p><div class="dot"></div></li>
-            <li class="answered"><img class="resp_pic open_modal" src="../images/patricia.png"><p></p><div class="dot black_dot"></div></li>
-        </ul>
-        <div class="statistics">
-            <p><span>2</span>related discussion</p>
-            <p><span>9</span>peers involved</p>
-            <p><span>5</span>conversations</p>
-        </div>
-    </article>
-    <article class="question">
-        <img class="owner_pic open_modal" src="../images/joseph.png">
-        <div class="title">
-            <p><strong class="open_modal">Joseph</strong> IS ASKING:</p>
-            <a href="singleQuestion.html"><h2>Vegan diet to stop diabetes progress</h2></a>
-        </div>
-        <ul class="respondents">
-            <li class="commented"><img class="resp_pic open_modal" src="../images/halima.png"><p></p><div class="dot"></div></li>
-            <li class="commented"><img class="resp_pic open_modal" src="../images/patricia.png"><p></p><div class="dot"></div></li>
-            <li class="answered"><img class="resp_pic open_modal" src="../images/eva.png"><p></p><div class="dot black_dot"></div></li>
-        </ul>
-        <div class="statistics">
-            <p><span>2</span>related discussion</p>
-            <p><span>9</span>peers involved</p>
-            <p><span>5</span>conversations</p>
-        </div>
-    </article>
-    <article class="load_more">
-        <p>load more questions</p>
-    </article>
+{{modal.enableModal()}}
 </main>
         
 <!-- MODAL BOX -->
@@ -141,5 +113,5 @@
         </main>
     </div>
 </div>
-    
+
 <script src="../js/profileModal.js"></script>

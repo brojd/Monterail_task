@@ -1,32 +1,291 @@
 {
-    "questions": [{
-        "id": 1,
-        "owner_id": 1,
-        "title": "Will insuline make my patient gain weight?",
-        "date": "14.06.2016",
-        "related_discussions": 1,
-        "peers_involved": 6,
-        "conversations": 3,
-        "answer": "exemplary answer...",
-        "comments_id": [1, 2]
-    }],
-    "comments": [{
-        "id": 1,
-        "text": "exemplary comment text",
-        "date": "8.06.2016",
-        "upvotes": 3,
-        "downvotes": 1,
-        "owner_id": 1,
-        "comments_id": [3]
-    }],
-    "users": [{
-        "id": 1,
-        "name": "Eva",
-        "date_of_join": "1.01.2014",
-        "last_log": "5.05.2016",
-        "nb_of_peers": 34,
-        "nb_of_discussions": 23,
-        "nb_of_findings": 12,
-        "nb_of_questions": 7
-    }]
+    "questions": [
+        {
+            "id": 1,
+            "owner_id": 1,
+            "title": "Will insuline make my patient gain weight?",
+            "date": "14.06.2016",
+            "related_discussions": 1,
+            "peers_involved": 6,
+            "conversations": 3,
+            "answer": ["exemplary answer..."],
+            "nbOfComments": 6,
+            "displayMore": "true"
+        },
+        {
+            "id": 2,
+            "owner_id": 2,
+            "title": "Vegan diets in diabetes treatment?",
+            "date": "14.06.2016",
+            "related_discussions": 5,
+            "peers_involved": 9,
+            "conversations": 8,
+            "answer": ["exemplary answer..."],
+            "nbOfComments": 9,
+            "displayMore": "true"
+        },
+        {
+            "id": 3,
+            "owner_id": 3,
+            "title": "Vegan diet to stop diabetes progress",
+            "date": "14.06.2016",
+            "related_discussions": 5,
+            "peers_involved": 9,
+            "conversations": 8,
+            "answer": ["exemplary answer..."],
+            "nbOfComments": 2,
+            "displayMore": "false"
+        }
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "question_id": 1,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 1,
+            "comments_id": [3]
+        },
+        {
+            "id": 2,
+            "question_id": 1,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 6,
+            "comments_id": [3]
+        },
+        {
+            "id": 3,
+            "question_id": 1,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 3,
+            "comments_id": [3]
+        },
+        {
+            "id": 4,
+            "question_id": 1,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 4,
+            "comments_id": [3]
+        },
+        {
+            "id": 5,
+            "question_id": 1,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 5,
+            "comments_id": [3]
+        },
+        {
+            "id": 6,
+            "question_id": 1,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 2,
+            "comments_id": [3]
+        },
+        {
+            "id": 7,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 5,
+            "comments_id": [3]
+        },
+        {
+            "id": 8,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 4,
+            "comments_id": [3]
+        },
+        {
+            "id": 9,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 6,
+            "comments_id": [3]
+        },
+        {
+            "id": 10,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 3,
+            "comments_id": [3]
+        },
+        {
+            "id": 11,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 2,
+            "comments_id": [3]
+        },
+        {
+            "id": 12,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 7,
+            "comments_id": [3]
+        },
+        {
+            "id": 13,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 6,
+            "comments_id": [3]
+        },
+        {
+            "id": 14,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 5,
+            "comments_id": [3]
+        },
+        {
+            "id": 15,
+            "question_id": 2,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 4,
+            "comments_id": [3]
+        },
+        {
+            "id": 16,
+            "question_id": 3,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 4,
+            "comments_id": [3]
+        },
+        {
+            "id": 17,
+            "question_id": 3,
+            "text": "exemplary comment text",
+            "date": "8.06.2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 4,
+            "comments_id": [3]
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Eva",
+            "img_path": "../images/eva.png",
+            "date_of_join": "1.01.2014",
+            "last_log": "5.05.2016",
+            "nb_of_peers": 34,
+            "nb_of_discussions": 23,
+            "nb_of_findings": 12,
+            "nb_of_questions": 7
+        },
+        {
+            "id": 2,
+            "name": "Andrew",
+            "img_path": "../images/andrew.png",
+            "date_of_join": "1.01.2014",
+            "last_log": "5.05.2016",
+            "nb_of_peers": 34,
+            "nb_of_discussions": 23,
+            "nb_of_findings": 12,
+            "nb_of_questions": 7
+        },
+        {
+            "id": 3,
+            "name": "David",
+            "img_path": "../images/david.png",
+            "date_of_join": "1.01.2014",
+            "last_log": "5.05.2016",
+            "nb_of_peers": 34,
+            "nb_of_discussions": 23,
+            "nb_of_findings": 12,
+            "nb_of_questions": 7
+        },
+        {
+            "id": 4,
+            "name": "Halima",
+            "img_path": "../images/halima.png",
+            "date_of_join": "1.01.2014",
+            "last_log": "5.05.2016",
+            "nb_of_peers": 34,
+            "nb_of_discussions": 23,
+            "nb_of_findings": 12,
+            "nb_of_questions": 7
+        },
+        {
+            "id": 5,
+            "name": "Joseph",
+            "img_path": "../images/joseph.png",
+            "date_of_join": "1.01.2014",
+            "last_log": "5.05.2016",
+            "nb_of_peers": 34,
+            "nb_of_discussions": 23,
+            "nb_of_findings": 12,
+            "nb_of_questions": 7
+        },
+        {
+            "id": 5,
+            "name": "Patricia",
+            "img_path": "../images/patricia.png",
+            "date_of_join": "1.01.2014",
+            "last_log": "5.05.2016",
+            "nb_of_peers": 34,
+            "nb_of_discussions": 23,
+            "nb_of_findings": 12,
+            "nb_of_questions": 7
+        },
+        {
+            "id": 6,
+            "name": "Waweru",
+            "img_path": "../images/waweru.png",
+            "date_of_join": "1.01.2014",
+            "last_log": "5.05.2016",
+            "nb_of_peers": 34,
+            "nb_of_discussions": 23,
+            "nb_of_findings": 12,
+            "nb_of_questions": 7
+        }
+    ]
 }

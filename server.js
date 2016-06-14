@@ -19,15 +19,16 @@ serverApp.use(bodyParser.urlencoded({ extended: true }));
 serverApp.use(bodyParser.json());
 
 
-/* SERVER ROUTES */
+
+/* ROUTES */
 
 
-
-/* FRONTEND ROUTE */
-
-
-serverApp.get('*', function(req, res) {
+serverApp.get('/', function(req, res) {
     res.sendFile(__dirname + '/public/views/index.html');
+});
+
+serverApp.get('/getDB', function(req, res) {
+    res.sendFile(__dirname + '/database.json');
 });
 
 

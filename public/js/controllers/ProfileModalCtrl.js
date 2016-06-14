@@ -1,6 +1,6 @@
-app.controller('ProfileModalCtrl', function($scope) {
+app.controller('ProfileModalCtrl', function() {
     
-    $scope.$on('$routeChangeSuccess', function () {
+    this.enableModal = function () {
         var modal = document.querySelector('#profile_modal');
         var openModalElems = document.querySelectorAll('.open_modal');
         var closeModalBtn = document.querySelector('.close_modal');
@@ -21,6 +21,6 @@ app.controller('ProfileModalCtrl', function($scope) {
                 modal.style.display = 'none';
             }
         }
-    });
+    };
     
 });
