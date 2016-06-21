@@ -1,0 +1,60 @@
+<!-- MODAL BOX -->
+<div id="profile_modal" class="modal">
+    <div class="modal_content">
+        <header>
+            <span class="close_modal ngdialog-close"></span>
+            <img ng-src="{{clickedUser.img_path}}">
+            <p><strong>{{clickedUser.name}}</strong></p>
+            <ul class="info">
+                <li>MEMBER FOR <span> {{monthsAgo()}} months</span></li>
+                <li>LAST SEEN <span> {{lastVisit()}}</span></li>
+                <li>ACTIVITY LEVEL
+                    <div class="activity_level">
+                        <img ng-show={{activityLevel().firstOn}} ng-src=../images/activity_level_on.png>
+                        <img ng-show={{!activityLevel().firstOn}} ng-src=../images/activity_level_off.png>
+                        <img ng-show={{activityLevel().secondOn}} ng-src=../images/activity_level_on.png>
+                        <img ng-show={{!activityLevel().secondOn}} ng-src=../images/activity_level_off.png>
+                        <img ng-show={{activityLevel().thirdOn}} ng-src=../images/activity_level_on.png>
+                        <img ng-show={{!activityLevel().thirdOn}} ng-src=../images/activity_level_off.png>
+                    </div>
+                </li>
+            </ul>
+        </header>
+        <main>
+            <h1>How it all started</h1>
+            <img src="../images/back_button2.png" class="back_button">
+            <img src="../images/next_button.png" class="next_button">
+            <p>
+                THAT'S WHERE WE HAVE BEEN THESE {{monthsAgo()}} MONTHS AGO
+            </p>
+            <ul class="squares">
+                <li id="peers"><p>{{clickedUser.nb_of_peers}}</p><span>peers</span></li>
+                <li id="discussions"><p>{{clickedUser.nb_of_discussions}}</p><span>discussions</span></li>
+                <li id="findings"><p>{{clickedUser.nb_of_findings}}</p><span>findings</span></li>
+                <li id="questions"><p>{{clickedUser.nb_of_questions}}</p><span>questions</span></li>
+            </ul>
+            <p>
+                WHO JOINED THE PLATFORM THAT SAME PERIOD
+            </p>
+            <ul class="join_users">
+                <li ng-repeat="user in joinedSamePeriod() | limitTo:3">
+                    <img ng-src="{{user.img_path}}"><p>{{user.name}}</p>
+                </li>
+            </ul>
+            <p>
+                THE HOTTEST DISCUSSION THESE DAYS
+            </p>
+            <div class="hot_discussion">
+                <img ng-src="{{getUser(hottestDiscussion().owner_id).img_path}}">
+                <p><span>{{getUser(hottestDiscussion().owner_id).name}}</span> FOUND THE GUARDIAN ARTICLE</p>
+                <h3>{{hottestDiscussion().title}}</h3>
+                <ul class="statistics">
+                    <li><span>{{hottestDiscussion().peers_involved}}</span> peers involved</li>
+                    <li><span>{{hottestDiscussion().related_discussions}}</span> related discussions</li>
+                    <li><span>{{hottestDiscussion().conversations}}</span> conversations</li>
+                    <li><span>{{hottestDiscussion().upvotes}}</span> upvotes</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+</div>

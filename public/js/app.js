@@ -1,1 +1,1 @@
-var app = angular.module('app', ['ngRoute', 'angularCSS']);
+var app = angular.module('app', ['ngRoute', 'angularCSS', 'ngDialog']);

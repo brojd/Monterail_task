@@ -5,22 +5,29 @@
     <div class="center_header">
         <h1>QUESTIONS</h1>
         <a href="#"><img class="add_question" src="../images/add_button.png"></a>
-        <p>Last time discussed <span>1</span> day ago</p>
+        <p>Last time discussed <span>{{singleQuestion.lastDiscussion()}}</span> day ago</p>
     </div>
 </header>
-<main ng-controller="ProfileModalCtrl">
+<main>
     <section class="question">
         <div class="comment_wrapper">
-            <img class="owner_pic open_modal" src="../images/eva.png">
+            <img class="owner_pic open_modal"
+                 id={{singleQuestion.currentUser.id}}
+                 ng-src="{{singleQuestion.currentUser.img_path}}"
+                 ng-click="singleQuestion.openModal($event);">
             <div class="title">
-                <p><strong class="open_modal">Eva</strong> IS ASKING:</p>
-                <h2>Will insuline make my patient gain weight?</h2>
+                <p>
+                    <strong class="open_modal" id={{singleQuestion.currentUser.id}}
+                            ng-click="singleQuestion.openModal($event);">
+                        {{singleQuestion.currentUser.name}}
+                    </strong>
+                    IS ASKING:
+                </p>
+                <h2>{{singleQuestion.currentQuestion.title}}</h2>
             </div>
             <a href="#"><strong>unfollow</strong></a>
             <p class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum semper aliquam.
-                Aliquam a aliquet arcu. Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
-                Donec non ex non massa rutrum vulputate sed id libero.
+                {{singleQuestion.currentQuestion.description}}
             </p>
             <div class="votes">
                 <p><span>19</span> upvotes</p>
@@ -31,128 +38,71 @@
         <button>GIVE new answer</button>
     </section>
     <section class="all_answers">
-        <p class="answers_header"><span>2</span> peers already answered Eva</p>
-        <article class="answer">
-            <img class="owner_pic open_modal" src="../images/patricia.png">
-            <div class="comment_wrapper">
-                <div class="title">
-                    <p>
-                        <strong class="open_modal">Patricia</strong> COMMENTED IT<span class="comment_dot"></span>
-                        <span class="comment_date">yesterday</span>
+        <p class="answers_header">
+            <span>{{singleQuestion.countAnswers(singleQuestion.currentQuestion)}}</span>
+            peers already answered Eva
+        </p>
+        <article class="answer_with_comments"
+                 ng-repeat="answer in singleQuestion.answers | filter:{question_id:singleQuestion.currentQuestion.id}"
+                 ng-class="{ 'uncommented':answer.commented=='false' }">
+            <article class="answer">
+                <img class="owner_pic open_modal"
+                     ng-src="{{singleQuestion.getCurrentUser(answer.owner_id).img_path}}"
+                     id={{singleQuestion.getCurrentUser(answer.owner_id).id}}
+                     ng-click="singleQuestion.openModal($event);">
+                <div class="comment_wrapper">
+                    <div class="title">
+                        <p>
+                            <strong class="open_modal" id={{singleQuestion.getCurrentUser(answer.owner_id).id}}
+                                    ng-click="singleQuestion.openModal($event);">
+                                {{singleQuestion.getCurrentUser(answer.owner_id).name}}
+                            </strong>
+                            ANSWERED IT<span class="comment_dot"></span>
+                            <span class="comment_date">
+                                {{singleQuestion.daysAgoAnswered(answer)}}
+                            </span>
+                        </p>
+                    </div>
+                    <p class="description">
+                        {{answer.text}}
                     </p>
+                    <div class="votes">
+                        <p><span>8</span> upvotes</p>
+                        <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
+                        <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                    </div>
                 </div>
-                <p class="description">
-                    Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
-                </p>
-                <div class="votes">
-                    <p><span>8</span> upvotes</p>
-                    <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                    <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
-                </div>
-            </div>
-        </article>
-        <article class="continued_answer">
-            <div class="comment_wrapper">
-                <img class="owner_pic open_modal" src="../images/david.png">
-                <div class="title">
-                    <p>
-                        <strong class="open_modal">David</strong> COMMENTED IT<span class="comment_dot"></span>
-                        <span class="comment_date">yesterday</span>
+                <button ng-show="answer.commented=='false'">COMMENT</button>
+            </article>
+            <article class="continued_answer"
+                     ng-repeat="comment in singleQuestion.comments | filter:{answer_id:answer.id}"
+                     ng-show="answer.commented=='true'">
+                <img class="owner_pic open_modal"
+                     ng-src="{{singleQuestion.getCurrentUser(comment.owner_id).img_path}}"
+                     id={{singleQuestion.getCurrentUser(comment.owner_id).id}}
+                     ng-click="singleQuestion.openModal($event);">
+                <div class="comment_wrapper">
+                    <div class="title">
+                        <p>
+                            <strong class="open_modal" id={{singleQuestion.getCurrentUser(comment.owner_id).id}}
+                                    ng-click="singleQuestion.openModal($event);">
+                                {{singleQuestion.getCurrentUser(comment.owner_id).name}}
+                            </strong>
+                            COMMENTED IT<span class="comment_dot"></span>
+                            <span class="comment_date">{{singleQuestion.daysAgoAnswered(answer)}}</span>
+                        </p>
+                    </div>
+                    <p class="description">
+                        {{comment.text}}
                     </p>
+                    <div class="votes">
+                        <p><span>2</span> upvotes</p>
+                        <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
+                        <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                    </div>
                 </div>
-                <p class="description">
-                    Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
-                    Donec non ex non massa rutrum vulputate sed id libero.
-                </p>
-                <div class="votes">
-                    <p><span>2</span> upvotes</p>
-                    <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                    <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
-                </div>
-            </div>
-            <button>CONTINUE discussion</button>
-        </article>
-        <article class="answer uncommented">
-            <div class="comment_wrapper">
-                <img class="owner_pic open_modal" src="../images/joseph.png">
-                <div class="title">
-                    <p>
-                        <strong class="open_modal">Joseph</strong> COMMENTED IT<span class="comment_dot"></span>
-                        <span class="comment_date">two days</span>
-                    </p>
-                </div>
-                <p class="description">
-                    Nunc quis lacus tincidunt, pulvinar nisi eu, rhoncus dolor.
-                    Donec non ex non massa rutrum vulputate sed id libero.
-                </p>
-                <div class="votes">
-                    <p><span>3</span> downvotes</p>
-                    <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                    <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
-                </div>
-            </div>
-            <button>COMMENT</button>
+                <button>CONTINUE discussion</button>
+            </article>
         </article>
     </section>
 </main>
-        
-<!-- MODAL BOX -->
-        
-<div id="profile_modal" class="modal">
-    <div class="modal_content">
-        <header>
-            <span class="close_modal">X</span>
-            <img src="../images/halima_big.png">
-            <p><strong>Dr. Halima</strong></p>
-            <ul class="info">
-                <li>MEMBER FOR <span> 5 months</span></li>
-                <li>LAST SEEN <span> Saturday afternoon</span></li>
-                <li>ACTIVITY LEVEL
-                    <div class="activity_level">
-                        <img src=../images/activity_level_on.png>
-                        <img src=../images/activity_level_on.png>
-                        <img src=../images/activity_level_off.png>
-                    </div>
-                </li>
-            </ul>
-        </header>
-        <main>
-            <h1>How it all started</h1>
-            <img src="../images/back_button2.png" class="back_button">
-            <img src="../images/next_button.png" class="next_button">
-            <p>
-                THAT'S WHERE WE HAVE BEEN THESE 5 MONTHS AGO
-            </p>
-            <ul class="squares">
-                <li id="peers"><p>46</p><span>peers</span></li>
-                <li id="discussions"><p>29</p><span>discussions</span></li>
-                <li id="findings"><p>19</p><span>findings</span></li>
-                <li id="questions"><p>10</p><span>questions</span></li>
-            </ul>
-            <p>
-                WHO JOINED THE PLATFORM THAT SAME PERIOD
-            </p>
-            <ul class="join_users">
-                <li><img src="../images/waweru.png"><p>S.E.N. Waweru</p></li>
-                <li><img src="../images/patricia.png"><p>Patricia</p></li>
-                <li><img src="../images/joseph.png"><p>Joseph Aluoch</p></li>
-            </ul>
-            <p>
-                THE HOTTEST DISCUSSION THESE DAYS
-            </p>
-            <div class="hot_discussion">
-                <img src="../images/andrew.png">
-                <p><span>Andrew</span> FOUND THE GUARDIAN ARTICLE</p>
-                <h3>Vegan diet to stop diabetes progress</h3>
-                <ul class="statistics">
-                    <li><span>6</span> peers involved</li>
-                    <li><span>3</span> related discussions</li>
-                    <li><span>3</span> conversations</li>
-                    <li><span>19</span> upvotes</li>
-                </ul>
-            </div>
-        </main>
-    </div>
-</div>
-    
-<script src="../js/profileModal.js"></script>

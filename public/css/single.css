@@ -122,7 +122,7 @@ section {
     bottom: 0;
 }
 
-.question button, .answer button, .continued_answer button {
+.question button, .answer_with_comments button, .continued_answer button {
     background: #ffffff;
     width: 180px;
     height: 30px;
@@ -170,101 +170,71 @@ section {
 /* answers */
 
 .all_answers {
-    margin: 60px auto 0 auto;
-    width: 800px;
+    margin-top: 60px;
 }
 
 .answers_header {
-    text-align: center;
-    margin: 16px 0;
+    margin: 0 auto 12px auto;
+    width: 250px;
+}
+
+.answer_with_comments {
+    
+}
+
+.answer_with_comments {
+    width: 100%;
+    margin-bottom: 34px;
 }
 
 .answer {
-    position: relative;
-    width: 800px;
+    height: 106px;
     background: #ffffff;
-    height: 100px;
     border-bottom: 1px solid #e8e8e8;
     box-shadow: 3px -1px 3px #e9e9e9;
+    position: relative;
 }
 
-.title .comment_date {
-    color: black;
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    display: inline-block;
-}
-
-.comment_dot {
-    background: #7d8fa0;
-    width: 3px;
-    height: 3px;
-    display: inline-block;
-    line-height: 16px;
-    vertical-align: middle;
-    border-radius: 100%;
-    margin: 0 9px;
-}
-
-.answer .description {
-    margin-top: 16px;
-}
-
-.answer .owner_pic, .continued_answer .owner_pic {
-    padding: 18px 20px 30px 20px;
-    top: 0;
-    left: 0;
+.answer .votes {
+    top: -30px;
 }
 
 .answer .comment_wrapper {
-    width: 707px;
+    width: 706px;
     float: right;
-    height: 100px;
     border-left: 1px solid #e8e8e8;
-}
-
-.continued_answer .comment_wrapper {
-    width: 615px;
-    float: right;
-    height: 140px;
-    border-left: 1px solid #e8e8e8;
-}
-
-.answer.uncommented .comment_wrapper {
-    width: 708px;
-    float: right;
-    height: 123px;
-    border-left: 1px solid #e8e8e8;
-}
-
-.answer .votes, .continued_answer .votes {
-    bottom: 43px;
 }
 
 .continued_answer {
-    position: relative;
-    width: 707px;
-    margin: 0 0 35px 93px;
-    background: #ffffff;
+    width: 706px;
     height: 140px;
-    border-bottom: 1px solid #e8e8e8;
+    background: blue;
+    position: relative;
+    background: #ffffff;
+    margin-left: 94px;
     box-shadow: 3px 0px 3px #e9e9e9;
 }
 
-.continued_answer button {
-    left: -95px;
+.continued_answer .comment_wrapper {
+    width: 616px;
+    height: 140px;
+    float: right;
+    border-left: 1px solid #e8e8e8;
 }
 
-.continued_answer .description {
-    width: 380px;
+.continued_answer .votes {
+    top: -41px;
 }
 
-.answer.uncommented {
-    height: 122px;
-    box-shadow: 3px -1px 3px #e9e9e9;
+.continued_answer p.description {
+    width: 420px;
 }
 
-.answer.uncommented .owner_pic {
-    padding-bottom: 52px;
+.answer_with_comments.uncommented .answer {
+    height: 124px;
+    position: relative;
+}
+
+.answer_with_comments.uncommented .comment_wrapper {
+    height: 124px;
 }

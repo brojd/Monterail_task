@@ -22,13 +22,18 @@
         </div>
     </div>
 </header>
-<main ng-controller="ProfileModalCtrl as modal">
-    {{modal.test}}
+<main>
     <article class="question" ng-repeat="question in questions.questions">
-        <img class="owner_pic open_modal" src="{{questions.getCurrentUser(question.owner_id).img_path}}">
+        <img class="owner_pic open_modal" ng-src="{{questions.getCurrentUser(question.owner_id).img_path}}"
+             id={{questions.getCurrentUser(question.owner_id).id}} ng-click="questions.openModal($event);">
         <div class="title">
-            <p><strong class="open_modal">{{questions.getCurrentUser(question.owner_id).name}}</strong> IS ASKING:</p>
-            <a href="#/question/1"><h2>{{question.title}}</h2></a>
+            <p>
+                <strong class="open_modal" id={{questions.getCurrentUser(question.owner_id).id}}
+                        ng-click="questions.openModal($event);">
+                    {{questions.getCurrentUser(question.owner_id).name}}
+                </strong> IS ASKING:
+            </p>
+            <a href="#/question/{{question.id}}"><h2>{{question.title}}</h2></a>
         </div>
         <ul class="respondents">
             <li class="more" ng-show="question.displayMore=='true'">
@@ -37,12 +42,16 @@
             </li>
             <span ng-repeat="comment in questions.comments | filter:{question_id:question.id} | limitTo:3">
                 <li class="commented">
-                    <img class="resp_pic open_modal" src="{{questions.getCurrentUser(comment.owner_id).img_path}}">
+                    <img class="resp_pic open_modal" ng-src="{{questions.getCurrentUser(comment.owner_id).img_path}}"
+                         id={{questions.getCurrentUser(comment.owner_id).id}}
+                         ng-click="questions.openModal($event);">
                     <div class="dot"></div>
                 </li>
             </span>
-            <li class="answered">
-                <img class="resp_pic open_modal" src="../images/joseph.png">
+            <li class="answered" ng-repeat="answer in questions.answers | filter:{question_id:question.id}">
+                <img class="resp_pic open_modal" ng-src="{{questions.getCurrentUser(answer.owner_id).img_path}}"
+                     id={{questions.getCurrentUser(answer.owner_id).id}}
+                     ng-click="questions.openModal($event);">
                 <div class="dot black_dot"></div>
             </li>
         </ul>
@@ -52,66 +61,4 @@
             <p><span>{{question.conversations}}</span>conversations</p>
         </div>
     </article>
-{{modal.enableModal()}}
 </main>
-        
-<!-- MODAL BOX -->
-        
-<div id="profile_modal" class="modal">
-    <div class="modal_content">
-        <header>
-            <span class="close_modal">X</span>
-            <img src="../images/halima_big.png">
-            <p><strong>Dr. Halima</strong></p>
-            <ul class="info">
-                <li>MEMBER FOR <span> 5 months</span></li>
-                <li>LAST SEEN <span> Saturday afternoon</span></li>
-                <li>ACTIVITY LEVEL
-                    <div class="activity_level">
-                        <img src=../images/activity_level_on.png>
-                        <img src=../images/activity_level_on.png>
-                        <img src=../images/activity_level_off.png>
-                    </div>
-                </li>
-            </ul>
-        </header>
-        <main>
-            <h1>How it all started</h1>
-            <img src="../images/back_button2.png" class="back_button">
-            <img src="../images/next_button.png" class="next_button">
-            <p>
-                THAT'S WHERE WE HAVE BEEN THESE 5 MONTHS AGO
-            </p>
-            <ul class="squares">
-                <li id="peers"><p>46</p><span>peers</span></li>
-                <li id="discussions"><p>29</p><span>discussions</span></li>
-                <li id="findings"><p>19</p><span>findings</span></li>
-                <li id="questions"><p>10</p><span>questions</span></li>
-            </ul>
-            <p>
-                WHO JOINED THE PLATFORM THAT SAME PERIOD
-            </p>
-            <ul class="join_users">
-                <li><img src="../images/waweru.png"><p>S.E.N. Waweru</p></li>
-                <li><img src="../images/patricia.png"><p>Patricia</p></li>
-                <li><img src="../images/joseph.png"><p>Joseph Aluoch</p></li>
-            </ul>
-            <p>
-                THE HOTTEST DISCUSSION THESE DAYS
-            </p>
-            <div class="hot_discussion">
-                <img src="../images/andrew.png">
-                <p><span>Andrew</span> FOUND THE GUARDIAN ARTICLE</p>
-                <h3>Vegan diet to stop diabetes progress</h3>
-                <ul class="statistics">
-                    <li><span>6</span> peers involved</li>
-                    <li><span>3</span> related discussions</li>
-                    <li><span>3</span> conversations</li>
-                    <li><span>19</span> upvotes</li>
-                </ul>
-            </div>
-        </main>
-    </div>
-</div>
-
-<script src="../js/profileModal.js"></script>

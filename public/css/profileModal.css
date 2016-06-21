@@ -1,7 +1,6 @@
 /* INITIAL SETTINGS */
 
 .modal {
-    display: none; 
     position: fixed; 
     z-index: 1;
     left: 0;
@@ -28,8 +27,9 @@
     position: absolute;
     right: 19px;
     top: 19px;
-    font-size: 13px;
-    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
 }
 
 .modal_content .close_modal:hover, .modal_content .close_modal:focus {
@@ -42,7 +42,7 @@
 /* HEADER */
 
 .modal_content header {
-    height: 150px;
+    height: 229px;
     width: 604px;
     margin: 0 auto;
     padding: 50px 0 30px 0;
@@ -52,6 +52,8 @@
 .modal_content header > img {
     display: block;
     margin: 0 auto 16px auto;
+    width: 90px;
+    height: 89px;
 }
 
 .modal_content header p {
@@ -75,11 +77,23 @@
     display: inline;
 }
 
+.modal_content header .info {
+    position: relative;
+    margin-top: 20px;
+}
+
 .modal_content header .info li {
     display: inline;
     font-size: 13px;
     color: #7d8fa0;
-    margin: 0 55px 0 0;
+    margin: 0 80px 0 0;
+}
+
+.modal_content header .info li:last-child {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    margin-right: 0;
 }
 
 .modal_content header .info li > span {
