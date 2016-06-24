@@ -7,7 +7,15 @@
             <h1>QUESTIONS</h1>
             <a href="#"><img class="add_question" src="../images/add_button.png"></a>
             <div class="sort">
-                Sort by: <a href="#">recent</a> or <a href="#">hot</a>
+                Sort by:
+                <span ng-click="questions.sort('date')">
+                    recent<img src="../images/down_vote.png" ng-show="questions.sortKey=='date'"
+                               ng-class="{'ascend_sort':questions.reverse,'descend_sort':!questions.reverse}">
+                </span> or
+                <span ng-click="questions.sort('conversations')">
+                    hot<img src="../images/down_vote.png" ng-show="questions.sortKey=='conversations'"
+                            ng-class="{'ascend_sort':questions.reverse,'descend_sort':!questions.reverse}">
+                </span>
             </div>
             <form class="filter">
                 <input type="radio" name="a" value="my"><span>My shelf</span>
@@ -23,7 +31,7 @@
     </div>
 </header>
 <main>
-    <article class="question" ng-repeat="question in questions.questions">
+    <article class="question" ng-repeat="question in questions.questions | orderBy:questions.sortKey:questions.reverse">
         <img class="owner_pic open_modal" ng-src="{{questions.getCurrentUser(question.owner_id).img_path}}"
              id={{questions.getCurrentUser(question.owner_id).id}} ng-click="questions.openModal($event);">
         <div class="title">

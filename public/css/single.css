@@ -176,6 +176,7 @@ section {
 .answers_header {
     margin: 0 auto 12px auto;
     width: 250px;
+    text-align: center;
 }
 
 .answer_with_comments {

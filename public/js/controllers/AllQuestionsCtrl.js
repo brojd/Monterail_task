@@ -24,8 +24,6 @@ app.controller('AllQuestionsCtrl', function(DatabaseService, $scope, ngDialog) {
         }
         return nbOfActivities - 4;
     });
-    
-    /* Enable modal */
         
     this.openModal = function($event) {
         $scope.clickedUser = this.getCurrentUser($event.target.id);
@@ -41,5 +39,10 @@ app.controller('AllQuestionsCtrl', function(DatabaseService, $scope, ngDialog) {
             controller: 'ProfileModalCtrl'
         });
     };
+    
+    this.sort = angular.bind(this, function(keyName) {
+        this.sortKey = keyName;
+        this.reverse = !this.reverse;
+    });
     
 });

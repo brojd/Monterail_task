@@ -171,7 +171,7 @@
   
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
   
   .center_header {
     width: 100%;
@@ -241,7 +241,7 @@
 
   .top_header .sort {
     position: absolute;
-    right: 32px;
+    right: 12px;
     bottom: 32px;
   }
   

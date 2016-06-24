@@ -39,6 +39,30 @@ aside {
 .sort {
     font-style: italic;
     letter-spacing: 0.5px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+.sort span {
+    color: #0266b3;
+    cursor: pointer;
+}
+
+.sort img.descend_sort, .sort img.ascend_sort {
+    width: 8px;
+    height: 8px;
+    position: relative;
+    left: 2px;
+}
+
+.sort img.descend_sort {
+    transform: rotate(180deg);
+    bottom: 2px;
 }
 
 .filter {
