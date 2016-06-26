@@ -29,6 +29,22 @@ app.controller('SingleQuestionCtrl', function(DatabaseService, $scope, $routePar
             return lookup[idOfQuestion];
         });
         
+        this.getCurrentAnswer = angular.bind(this, function(idOfAnswer) {
+            var lookup = {};
+            for (var i = 0; i < this.answers.length; i++) {
+                lookup[this.answers[i].id] = this.answers[i];
+            };
+            return lookup[idOfAnswer];
+        });
+        
+        this.getCurrentComment = angular.bind(this, function(idOfComment) {
+            var lookup = {};
+            for (var i = 0; i < this.comments.length; i++) {
+                lookup[this.comments[i].id] = this.comments[i];
+            };
+            return lookup[idOfComment];
+        });
+        
         this.currentQuestion = this.getCurrentQuestion($routeParams.questionID);
         this.currentUserID = this.currentQuestion.owner_id;
         this.currentUser = this.getCurrentUser(this.currentQuestion.owner_id);
@@ -53,6 +69,42 @@ app.controller('SingleQuestionCtrl', function(DatabaseService, $scope, $routePar
         this.countAnswers = angular.bind(this, function(currentQuestion) {
             var allAnswersComments = currentQuestion.nbOfComments + currentQuestion.nbOfAnswers;
             return allAnswersComments;
+        });
+        
+        this.increaseQuestionUpvotes = angular.bind(this, function(idOfQuestion) {
+            this.getCurrentQuestion(idOfQuestion).upvotes = Number(this.currentQuestion.upvotes);
+            this.getCurrentQuestion(idOfQuestion).upvotes += 1;
+            DatabaseService.updateQuestion(this.currentQuestion);
+        });
+        
+        this.increaseQuestionDownvotes = angular.bind(this, function(idOfQuestion) {
+            this.getCurrentQuestion(idOfQuestion).downvotes = Number(this.currentQuestion.downvotes);
+            this.getCurrentQuestion(idOfQuestion).downvotes += 1;
+            DatabaseService.updateQuestion(this.currentQuestion);
+        });
+        
+        this.increaseAnswerUpvotes = angular.bind(this, function(idOfAnswer) {
+            this.getCurrentAnswer(idOfAnswer).upvotes = Number(this.getCurrentAnswer(idOfAnswer).upvotes);
+            this.getCurrentAnswer(idOfAnswer).upvotes += 1;
+            DatabaseService.updateAnswer(this.getCurrentAnswer(idOfAnswer));
+        });
+        
+        this.increaseAnswerDownvotes = angular.bind(this, function(idOfQuestion) {
+            this.getCurrentAnswer(idOfAnswer).downvotes = Number(this.getCurrentAnswer(idOfAnswer).downvotes);
+            this.getCurrentAnswer(idOfAnswer).downvotes += 1;
+            DatabaseService.updateAnswer(this.getCurrentAnswer(idOfAnswer));
+        });
+        
+        this.increaseCommentUpvotes = angular.bind(this, function(idOfComment) {
+            this.getCurrentComment(idOfComment).upvotes = Number(this.getCurrentComment(idOfComment).upvotes);
+            this.getCurrentComment(idOfComment).upvotes += 1;
+            DatabaseService.updateComment(this.getCurrentComment(idOfComment));
+        });
+        
+        this.increaseCommentDownvotes = angular.bind(this, function(idOfComment) {
+            this.getCurrentComment(idOfComment).downvotes = Number(this.getCurrentComment(idOfComment).downvotes);
+            this.getCurrentComment(idOfComment).downvotes += 1;
+            DatabaseService.updateComment(this.getCurrentComment(idOfComment));
         });
         
         /* Enable modal */

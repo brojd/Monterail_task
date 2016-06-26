@@ -30,9 +30,11 @@
                 {{singleQuestion.currentQuestion.description}}
             </p>
             <div class="votes">
-                <p><span>19</span> upvotes</p>
-                <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                <p><span>{{singleQuestion.currentQuestion.upvotes}}</span> upvotes</p>
+                <img class="up_vote" src="../images/up_vote.png"
+                     ng-click="singleQuestion.increaseQuestionUpvotes(singleQuestion.currentQuestion.id)">
+                <img class="down_vote" src="../images/down_vote.png"
+                     ng-click="singleQuestion.increaseQuestionDownvotes(singleQuestion.currentQuestion.id)">
             </div>
         </div>
         <button>GIVE new answer</button>
@@ -67,9 +69,11 @@
                         {{answer.text}}
                     </p>
                     <div class="votes">
-                        <p><span>8</span> upvotes</p>
-                        <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                        <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                        <p><span>{{answer.upvotes}}</span> upvotes</p>
+                        <img class="up_vote" src="../images/up_vote.png"
+                             ng-click="singleQuestion.increaseAnswerUpvotes(answer.id)">
+                        <img class="down_vote" src="../images/down_vote.png"
+                             ng-click="singleQuestion.decreaseAnswerUpvotes(answer.id)">
                     </div>
                 </div>
                 <button ng-show="answer.commented=='false'">COMMENT</button>
@@ -96,9 +100,11 @@
                         {{comment.text}}
                     </p>
                     <div class="votes">
-                        <p><span>2</span> upvotes</p>
-                        <a href="#"><img class="up_vote" src="../images/up_vote.png"></a>
-                        <a href="#"><img class="down_vote" src="../images/down_vote.png"></a>
+                        <p><span>{{comment.upvotes}}</span> upvotes</p>
+                        <img class="up_vote" src="../images/up_vote.png"
+                             ng-click="singleQuestion.increaseCommentUpvotes(answer.id)">
+                        <img class="down_vote" src="../images/down_vote.png"
+                             ng-click="singleQuestion.increaseCommentDownvotes(answer.id)">
                     </div>
                 </div>
                 <button>CONTINUE discussion</button>
