@@ -45,4 +45,10 @@ app.controller('AllQuestionsCtrl', function(DatabaseService, $scope, ngDialog) {
         this.reverse = !this.reverse;
     });
     
+    this.limitNbQuestions = 3;
+    
+    this.increaseNbQuestions = angular.bind(this, function() {
+        this.limitNbQuestions += 2;
+    });
+    
 });

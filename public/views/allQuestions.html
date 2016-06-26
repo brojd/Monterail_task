@@ -31,7 +31,7 @@
     </div>
 </header>
 <main>
-    <article class="question" ng-repeat="question in questions.questions | orderBy:questions.sortKey:questions.reverse">
+    <article class="question" ng-repeat="question in questions.questions | orderBy:questions.sortKey:questions.reverse | limitTo: questions.limitNbQuestions">
         <img class="owner_pic open_modal" ng-src="{{questions.getCurrentUser(question.owner_id).img_path}}"
              id={{questions.getCurrentUser(question.owner_id).id}} ng-click="questions.openModal($event);">
         <div class="title">
@@ -68,5 +68,8 @@
             <p><span>{{question.peers_involved}}</span>peers involved</p>
             <p><span>{{question.conversations}}</span>conversations</p>
         </div>
+    </article>
+    <article class="load_more">
+        <p ng-click="questions.increaseNbQuestions()">load more questions</p>
     </article>
 </main>

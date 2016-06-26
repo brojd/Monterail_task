@@ -243,10 +243,13 @@ article .title p strong {
 article.load_more {
     background: #ffffff;
     margin-top: 3px;
+    padding: 35px 0;
 }
 
 article.load_more p {
-    padding: 35px 0 35px 22px;
     color: #dc173f;
     font-weight: bold;
+    cursor: pointer;
+    margin-left: 20px;
+    width: 145px;
 }

@@ -47,6 +47,54 @@
             "nbOfAnswers": 1,
             "nbOfComments": 2,
             "displayMore": "false"
+        },
+        {
+            "id": 4,
+            "owner_id": 6,
+            "title": "Quisque lorem tortor fringilla sed",
+            "description": " Integer ultrices posuere cubilia Curae, Nulla ipsum dolor lacus, suscipit adipiscing. Cum sociis natoque penatibus et ultrices volutpat.",
+            "date": "10.06.2013",
+            "last_time_discussed": "2015/03/19",
+            "related_discussions": 7,
+            "upvotes": 2,
+            "downvotes": 3,
+            "peers_involved": 4,
+            "conversations": 8,
+            "nbOfAnswers": 4,
+            "nbOfComments": 4,
+            "displayMore": "true"
+        },
+        {
+            "id": 5,
+            "owner_id": 3,
+            "title": "Nullam wisi ultricies a, gravida vitae",
+            "description": "Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue.",
+            "date": "12.04.2013",
+            "last_time_discussed": "2016/06/19",
+            "related_discussions": 5,
+            "upvotes": 3,
+            "downvotes": 1,
+            "peers_involved": 9,
+            "conversations": 8,
+            "nbOfAnswers": 1,
+            "nbOfComments": 2,
+            "displayMore": "false"
+        },
+        {
+            "id": 6,
+            "owner_id": 2,
+            "title": "Curabitur et ligula. Ut molestie a, ultricies porta urna.",
+            "description": "Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. ",
+            "date": "7.06.2013",
+            "last_time_discussed": "2016/07/19",
+            "related_discussions": 5,
+            "upvotes": 3,
+            "downvotes": 1,
+            "peers_involved": 9,
+            "conversations": 8,
+            "nbOfAnswers": 1,
+            "nbOfComments": 2,
+            "displayMore": "false"
         }
     ],
     "answers": [
@@ -88,6 +136,66 @@
             "upvotes": 3,
             "downvotes": 1,
             "owner_id": 6,
+            "commented": "true"
+        },
+        {
+            "id": 5,
+            "question_id": 4,
+            "text": "answer 5 textttt",
+            "date": "5/5/2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 6,
+            "commented": "true"
+        },
+        {
+            "id": 6,
+            "question_id": 5,
+            "text": "answer 6 textttt",
+            "date": "5/9/2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 3,
+            "commented": "true"
+        },
+        {
+            "id": 7,
+            "question_id": 6,
+            "text": "answer 7 textttt",
+            "date": "1/9/2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 5,
+            "commented": "true"
+        },
+        {
+            "id": 8,
+            "question_id": 4,
+            "text": "answer 8 textttt",
+            "date": "5/5/2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 4,
+            "commented": "true"
+        },
+        {
+            "id": 9,
+            "question_id": 4,
+            "text": "answer 9 textttt",
+            "date": "5/5/2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 1,
+            "commented": "true"
+        },
+        {
+            "id": 10,
+            "question_id": 4,
+            "text": "answer 10 textttt",
+            "date": "5/5/2016",
+            "upvotes": 3,
+            "downvotes": 1,
+            "owner_id": 2,
             "commented": "true"
         }
     ],
