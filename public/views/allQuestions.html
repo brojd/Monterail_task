@@ -24,14 +24,17 @@
         </div>
         <div class="bottom_header">
             <form>
-                <input type="text" placeholder="Search questions">
+                <input type="text" placeholder="Search questions" ng-model="questions.filterQuestions">
                 <input type="submit" value="SEARCH">
             </form>
         </div>
     </div>
 </header>
 <main>
-    <article class="question" ng-repeat="question in questions.questions | orderBy:questions.sortKey:questions.reverse | limitTo: questions.limitNbQuestions">
+    <article class="question" ng-repeat="question in questions.questions |
+                                         orderBy:questions.sortKey:questions.reverse |
+                                         limitTo: questions.limitNbQuestions |
+                                         filter: {title: questions.filterQuestions}">
         <img class="owner_pic open_modal" ng-src="{{questions.getCurrentUser(question.owner_id).img_path}}"
              id={{questions.getCurrentUser(question.owner_id).id}} ng-click="questions.openModal($event);">
         <div class="title">
