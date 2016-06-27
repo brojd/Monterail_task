@@ -59,7 +59,7 @@
                     <div class="dot"></div>
                 </li>
             </span>
-            <li class="answered" ng-repeat="answer in questions.answers | filter:{question_id:question.id}">
+            <li class="answered" ng-repeat="answer in questions.answers | filter:{question_id:question.id} | limitTo:1">
                 <img class="resp_pic open_modal" ng-src="{{questions.getCurrentUser(answer.owner_id).img_path}}"
                      id={{questions.getCurrentUser(answer.owner_id).id}}
                      ng-click="questions.openModal($event);">
